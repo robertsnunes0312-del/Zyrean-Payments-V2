@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: zyrean-payments
+    runtime: python
+    plan: free
+    buildCommand: python -m py_compile app.py
+    startCommand: python app.py
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: PAYMENT_MODE
+        value: sandbox
